@@ -6,9 +6,13 @@ In this lab, you'll practice various aspects of object-oriented programming in S
 
 Create a class called `Book` with the following specifications:
 
-1. It should have fields for `title` (String), `author` (String), and `yearPublished` (Int).
-2. Create a constructor that initializes these fields.
-3. Add a method called `getInfo` that returns a string with the book's information.
+1. It should have fields for `title` (String), `author` (String), and `yearPublished` (Int), all immutable, which are initialised from parameters:
+
+    ```scala
+    val myBook = new Book("1984", "George Orwell", 1949)
+    ```
+
+2. Add a method called `getInfo` that returns a string with the book's information.
 
 <details>
 <summary>Reveal Solution</summary>
@@ -38,24 +42,24 @@ Modify the `Book` class to include:
 import scala.util.Random
 
 class Book(val title: String, val author: String, val yearPublished: Int) {
-  val uniqueID: String = Random.alphanumeric.take(8).mkString
-  def randomQuote: String = {
-    val quotes = List(
+  val uniqueID: String = Random.alphanumeric.take(6).mkString
+
+  def randomQuote(): String = {
+    val quotes: Array[String] = Array(
       "To be or not to be",
       "All that glitters is not gold",
       "The only way to do great work is to love what you do"
     )
     quotes(Random.nextInt(quotes.length))
   }
-  
-  def getInfo: String = s"$title by $author ($yearPublished)"
+  override def toString(): String = s"""A book called "$title" by $author, published on $yearPublished. ISBN: $uniqueID. "${randomQuote()}"."""
 }
 
 // Usage
 val myBook = new Book("1984", "George Orwell", 1949)
 println(myBook.uniqueID)  // Output: A random 8-character string
-println(myBook.randomQuote)  // Output: A random quote
-println(myBook.randomQuote)  // Output: Possibly a different random quote
+println(myBook.randomQuote())  // Output: A random quote
+println(myBook.randomQuote())  // Output: Possibly a different random quote
 ```
 </details>
 

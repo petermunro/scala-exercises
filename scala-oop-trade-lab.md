@@ -94,15 +94,26 @@ trade1 match {
 ```
 </details>
 
-## Exercise 4: Implicit Class for Trade Extensions
+## Exercise 4: Extension Methods for Trade
 
-Create an implicit class to add extension methods to the `Trade` class:
+In this exercise, we'll add extension methods to the `Trade` class using implicit classes for Scala 2. In Scala 3, the same use case is handled using extension methods. Complete the Scala 2 version, then research Scala 3 extension methods.
 
-1. Add a method `valueInEuros` that converts the trade value to Euros (assume 1 USD = 0.85 EUR).
-2. Add a method `summary` that returns a formatted string with trade details.
+We want to add the following methods:
+
+- A method `valueInEuros` that converts the trade value to Euros (assume 1 USD = 0.85 EUR).
+- A method `summary` that returns a formatted string with trade details.
+
+### Implicit Class for Trade Extensions (Scala 2)
+
+In Scala 2, we use implicit classes to add extension methods to existing types.
+
+1. Create an implicit class `TradeOps` in an object `TradeExtensions`.
+2. Add the methods specified above into that object.
+3. Test your solution.
+
 
 <details>
-<summary>Reveal Solution</summary>
+<summary>Reveal Scala 2 Solution</summary>
 
 ```scala
 case class Trade(id: String, symbol: String, quantity: Int, price: Double) {
