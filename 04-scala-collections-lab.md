@@ -23,6 +23,20 @@ case class Movie(title: String, year: Int, genre: String, director: String)
 </details>
 
 2. Create a `List` of at least 9 `Movie` objects, including some famous Bollywood movies.
+    - Here's a list to help you:
+
+      ```
+      "Inception", 2010, "Sci-Fi", "Christopher Nolan"
+      "The Shawshank Redemption", 1994, "Drama", "Frank Darabont"
+      "Dilwale Dulhania Le Jayenge", 1995, "Romance", "Aditya Chopra"
+      "3 Idiots", 2009, "Comedy-Drama", "Rajkumar Hirani"
+      "Lagaan", 2001, "Drama", "Ashutosh Gowariker"
+      "The Dark Knight", 2008, "Action", "Christopher Nolan"
+      "Sholay", 1975, "Action-Adventure", "Ramesh Sippy"
+      "Pulp Fiction", 1994, "Crime", "Quentin Tarantino"
+      "Mughal-e-Azam", 1960, "Historical Drama", "K. Asif
+      ```
+
 
 <details>
 <summary>Reveal Solution</summary>
